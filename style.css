@@ -1,0 +1,219 @@
+:root {
+  --background1: hsl(252, 95%, 62%);
+  --background2: hsl(241, 81%, 54%);
+  --circle1: hsl(256, 98%, 37%);
+  --circle2: hsla(241, 49%, 58%, 0);
+  --color1: hsl(0, 0%, 100%);
+  --color2: hsl(221, 100%, 96%);
+  --color3: hsl(241, 69%, 76%);
+  --color4: hsl(224, 30%, 27%);
+  --color5: hsl(241, 100%, 89%);
+  --color6: hsl(0, 100%, 67%);
+  --color7: hsl(0deg 100% 67% / 4%);
+  --color8: hsl(39, 100%, 56%);
+  --color9: hsl(39deg 100% 56% / 4%);
+  --color10: hsl(166, 100%, 37%);
+  --color11: hsl(166deg 100% 37% / 5%);
+  --color12: hsl(234, 85%, 45%);
+  --color13: hsl(234deg 85% 45% / 5%);
+  --color14: hsl(0, 0%, 67%);
+  --size: 0.8rem;
+}
+
+@font-face {
+  font-family: "Hanken";
+  src: url(./assets/fonts/HankenGrotesk-VariableFont_wght.ttf);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font: inherit;
+  font-family: "Hanken";
+  background-color: transparent;
+  cursor: default;
+}
+*::selection {
+  background: transparent;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+
+@media (max-width: 1920px) {
+  body {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+  }
+  .container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    place-items: center;
+    max-width: 600px;
+    border-radius: 2rem;
+    box-shadow: 4px 6px 9px var(--color2);
+    position: relative;
+  }
+  .container::after {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0px 3px 7px var(--color2);
+    border-radius: 2rem;
+    z-index: -1000;
+  }
+  .result-container {
+    text-align: center;
+    background: linear-gradient(to top, var(--background2), var(--background1));
+    border-radius: 2rem;
+    color: var(--color2);
+    padding: 40px 30px;
+  }
+
+  .first-title {
+    color: var(--color5);
+    font-size: 1.2rem;
+    font-weight: 500;
+    /* margin-bottom: 20px; */
+    padding: 0px 0px 30px;
+  }
+
+  .result-graduation {
+    background: linear-gradient(to bottom, var(--circle1), var(--circle2));
+    border-radius: 150px;
+    width: 140px;
+    margin: 0 auto;
+    padding: 30px;
+  }
+  .result-graduation:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+  }
+  .first-number {
+    font-size: 3rem;
+    font-weight: 800;
+  }
+
+  .first-number {
+    color: var(--color1);
+  }
+
+  .second-number {
+    color: var(--color3);
+    font-size: var(--size);
+    font-weight: 800;
+  }
+  .second-title {
+    margin-top: 20px;
+    font-size: 1.4rem;
+    font-weight: 700;
+  }
+  .text-score {
+    font-size: var(--size);
+    padding: 15px 30px;
+    color: var(--color3);
+    font-weight: 700;
+  }
+  .summary-container {
+    text-align: left;
+    height: 100%;
+    width: 80%;
+  }
+  .third-title {
+    color: var(--color4);
+    font-weight: 800;
+    padding: 20px 0;
+  }
+  .category {
+    margin-bottom: 15px;
+  }
+  .action-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .reaction {
+    display: flex;
+    justify-content: space-between;
+    background: var(--color7);
+    padding: 12px;
+    border-radius: 0.5rem;
+    color: var(--color6);
+    font-weight: 700;
+  }
+
+  .memory {
+    display: flex;
+    justify-content: space-between;
+    background: var(--color9);
+    padding: 12px;
+    border-radius: 0.5rem;
+    color: var(--color8);
+    font-weight: 700;
+  }
+  .verbal {
+    display: flex;
+    justify-content: space-between;
+    background: var(--color11);
+    padding: 12px;
+    border-radius: 0.5rem;
+    color: var(--color10);
+    font-weight: 700;
+  }
+  .visual {
+    display: flex;
+    justify-content: space-between;
+    background: var(--color13);
+    padding: 12px;
+    border-radius: 0.5rem;
+    color: var(--color12);
+    font-weight: 700;
+  }
+  .score {
+    color: var(--color4);
+    font-weight: 800;
+    display: flex;
+    gap: 5px;
+  }
+  span {
+    color: var(--color14);
+    font-weight: 500;
+  }
+
+  button {
+    width: 100%;
+    border: none;
+    background: var(--color4);
+    color: var(--color1);
+    padding: 12px;
+    border-radius: 2rem;
+    margin-top: 20px;
+  }
+  button:hover {
+    cursor: pointer;
+  }
+  button:focus {
+    background: linear-gradient(to top, var(--background2), var(--background1));
+  }
+}
+@media (max-width: 375px) {
+  body {
+    min-height: auto;
+  }
+  .result-container {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+  .container {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  button {
+    margin: 0 0 20px;
+  }
+}
